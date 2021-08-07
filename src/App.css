@@ -32,7 +32,7 @@
 .card{
   position: relative;
   text-align: center;
-  
+  margin: 16px;
   min-height: 250px;
   /* min-width: 250px; */
   transition: transform .2s !important;
@@ -41,6 +41,7 @@
   -moz-box-shadow: 5px 5px 15px -12px rgba(255,101,8,1) !important;
   box-shadow: 5px 5px 15px -12px rgba(255,101,8,1) !important;
   overflow: hidden;
+  z-index: -1;
 }
 
 
