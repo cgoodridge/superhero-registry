@@ -7,7 +7,7 @@ const DropDown = ({ toggle, sortBy, onSortByChange, orderBy, onOrderByChange }) 
       return null;
     }
     return (
-        <div className="origin-top-right absolute right-0 mt-2 w-56
+        <div className=" dropdownzIndex origin-top-right absolute right-0 mt-2 w-56
         rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
           <div onClick={() => onSortByChange('name')}
@@ -16,9 +16,9 @@ const DropDown = ({ toggle, sortBy, onSortByChange, orderBy, onOrderByChange }) 
           <div onClick={() => onSortByChange('alias')}
             className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
             role="menuitem">Alias {(sortBy === 'alias') && <BiCheck />}</div>
-          <div onClick={() => onSortByChange('date')}
+          <div onClick={() => onSortByChange('birthDate')}
             className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-            role="menuitem">Date Registered {(sortBy === 'date') && <BiCheck />}</div>
+            role="menuitem">Birth Date {(sortBy === 'date') && <BiCheck />}</div>
           <div onClick={() => onOrderByChange('asc')}
             className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer border-gray-1 border-t-2"
             role="menuitem">Asc {(orderBy === 'asc') && <BiCheck />}</div>

@@ -40,8 +40,10 @@ const App = () => {
 
   return (
     <div className="App container mx-auto mt-3 font-thin">
-      <h1 className="text-5xl mb-3">Superhero Registry</h1>
-      <AddHero />
+      <h1 className="text-5xl mb-3">S.W.O.R.D. Threat Monitoring</h1>
+      <AddHero 
+        onSendHero={myHero => setHeroList([...heroList, myHero])}
+        lastId={heroList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}/>
       <Search 
         query={query} 
         onQueryChange={myQuery => setQuery(myQuery)} 
@@ -53,7 +55,7 @@ const App = () => {
       <Grid container>
         {filteredHeroes.map((hero, key) => (
           <HeroInfo key={hero.id} hero={hero} 
-          onDeleteHero={ heroId => setHeroList(heroList.filter(hero => hero.id != heroId))}/>
+          onDeleteHero={ heroId => setHeroList(heroList.filter(hero => hero.id !== heroId))}/>
         ))} 
       </Grid>
     </div>

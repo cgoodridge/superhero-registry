@@ -1,17 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+*{transition:all 0.3s ease-in-out;}
 
 .App-header {
   background-color: #282c34;
@@ -34,18 +21,50 @@
   text-align: center;
   margin: 16px;
   min-height: 250px;
-  /* min-width: 250px; */
+  max-height: 450px !important;
+  min-width: 180px;
   transition: transform .2s !important;
-  border-radius: 5px !important;
-  -webkit-box-shadow: 5px 5px 15px -12px rgba(255,101,8,1) !important;
-  -moz-box-shadow: 5px 5px 15px -12px rgba(255,101,8,1) !important;
-  box-shadow: 5px 5px 15px -12px rgba(255,101,8,1) !important;
+  border-radius: 15px !important;
+  -webkit-box-shadow: 5px 5px 15px -12px rgb(54, 184, 255) !important;
+  -moz-box-shadow: 5px 5px 15px -12px rgb(54, 184, 255) !important;
+  box-shadow: 5px 5px 15px -12px rgb(54, 184, 255) !important;
   overflow: hidden;
-  z-index: -1;
+  
 }
 
 
-
 .card:hover {
-  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.05) ; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.dropdownzIndex{
+  z-index: 1;
+}
+
+.cardText{
+  position: absolute;
+  color: white;
+  font-family:'Jura' !important;
+  /* background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 100%); */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+
+  /* backdrop-filter: blur(5px); */
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 50%; 
+  
+  transform: translate(-50%, -100%);
+}
+
+.textPanel{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  font-size: 22px;
+  color: white !important;
+  transform: translate(-50%, -20%);
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent); */
+  /* background-color: aqua !important; */
+  z-index: 999999999999;
 }
