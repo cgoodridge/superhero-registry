@@ -69,9 +69,13 @@ const App = () => {
           
             <Grid container spacing={10} justifyContent="space-between" alignItems="center" style={{marginTop:"16px"}}>
                 <Grid item>
-                    <AddHero 
+                  <div>
+
+                  </div>
+
+                    {/* <AddHero 
                       onSendHero={myHero => setHeroList([...heroList, myHero])}
-                      lastId={heroList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}/>
+                      lastId={heroList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}/> */}
                     
                 </Grid>
                 <Grid item>
