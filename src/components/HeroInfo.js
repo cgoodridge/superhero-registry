@@ -25,10 +25,10 @@ const HeroInfo = ({ hero, onDeleteHero }) => {
                 </div>
                 
             </Card>
-            <button type="button" onClick={ () => onDeleteHero(hero.id)}
+            {/* <button type="button" onClick={ () => onDeleteHero(hero.id)}
              className="p-1.5 mr-1.5 mt-1 rounded text-white bg-red-500 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <BiTrash />
-            </button>
+            </button> */}
           </Grid>
     )
 }

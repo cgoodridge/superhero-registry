@@ -1,64 +1,77 @@
 import { BiSearch, BiCaretDown, BiCheck } from "react-icons/bi";
 import { useState } from 'react';
-
-const DropDown = ({ toggle, sortBy, onSortByChange, orderBy, onOrderByChange }) => {
-
-    if (!toggle) {
-      return null;
-    }
-    return (
-        <div className=" dropdownzIndex origin-top-right absolute right-0 mt-2 w-56
-        rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-        <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-          <div onClick={() => onSortByChange('name')}
-            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-            role="menuitem">Name {(sortBy === 'name') && <BiCheck />}</div>
-          <div onClick={() => onSortByChange('alias')}
-            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-            role="menuitem">Alias {(sortBy === 'alias') && <BiCheck />}</div>
-          <div onClick={() => onSortByChange('birthDate')}
-            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-            role="menuitem">Birth Date {(sortBy === 'date') && <BiCheck />}</div>
-          <div onClick={() => onOrderByChange('asc')}
-            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer border-gray-1 border-t-2"
-            role="menuitem">Asc {(orderBy === 'asc') && <BiCheck />}</div>
-          <div onClick={() => onOrderByChange('desc')}
-            className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-            role="menuitem">Desc {(orderBy === 'desc') && <BiCheck />}</div>
-        </div>
-      </div>
-    );
-}
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import SortIcon from '@material-ui/icons/Sort';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 const Search = ({ query, onQueryChange, sortBy, onSortByChange, orderBy, onOrderByChange }) => {
-    let [toggleSort, setToggleSort] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
     return (
-        <div className="py-5">
-        <div className="mt-1 relative rounded-md shadow-sm">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <BiSearch />
-            <label htmlFor="query" className="sr-only" />
-          </div>
-          <input type="text" name="query" id="query" value={query} onChange={(event) => {onQueryChange(event.target.value)}}
-            className="pl-8 rounded-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300" placeholder="Search" />
-          <div className="absolute inset-y-0 right-0 flex items-center">
-            <div>
-              <button type="button" onClick={() => {setToggleSort(!toggleSort)}}
-                className="justify-center px-4 py-2 bg-blue-400 border-2 border-blue-400 text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
-                Sort By <BiCaretDown className="ml-2" />
-              </button>
-              <DropDown 
-                toggle={toggleSort}
-                sortBy={sortBy}
-                onSortByChange={mySort => onSortByChange(mySort)}
-                orderBy={orderBy}
-                onOrderByChange={myOrder => onOrderByChange(myOrder)}/>
+      <>
+        <Grid container>
+          <Grid item>
+            <FormControl>
+                
+                <InputLabel htmlFor="query" className="sr-only">Search</InputLabel>
+                <Input type="text" 
+                    startAdornment={
+                      <InputAdornment position="start">
+                        <BiSearch style={{color: 'whitesmoke'}}/>
+                      </InputAdornment>
+                    }
+                    name="query" 
+                    id="query" 
+                    value={query} 
+                    color="secondary"
+                    onChange={(event) => {onQueryChange(event.target.value)}}
+                    placeholder="Search" />
+            </FormControl>
+          </Grid>
+
+          <Grid item>
+            <div className="absolute inset-y-0 right-0 flex items-center">
+              <div>
+                <IconButton onClick={handleClick}>
+                  <SortIcon color="secondary"/>
+                </IconButton>
+                
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </Grid>
+        </Grid>
+
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+        <MenuItem onClick={() => onSortByChange('name')}>Name {(sortBy === 'name') && <BiCheck />}</MenuItem>
+        <MenuItem onClick={() => onSortByChange('alias')}>Alias {(sortBy === 'alias') && <BiCheck />}</MenuItem>
+        <MenuItem onClick={() => onSortByChange('birthDate')}>Birth Date {(sortBy === 'date') && <BiCheck />}</MenuItem>
+        <MenuItem onClick={() => onOrderByChange('asc')}>Asc {(orderBy === 'asc') && <BiCheck />}</MenuItem>
+        <MenuItem onClick={() => onOrderByChange('desc')}>Desc {(orderBy === 'desc') && <BiCheck />}</MenuItem>
+      </Menu>
+    </>
     );
 }
 

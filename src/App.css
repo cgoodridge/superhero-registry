@@ -21,7 +21,7 @@
   text-align: center;
   margin: 16px;
   min-height: 250px;
-  max-height: 450px !important;
+  max-height: 400px !important;
   min-width: 180px;
   transition: transform .2s !important;
   border-radius: 15px !important;
@@ -61,10 +61,26 @@
   position: absolute;
   top: 80%;
   left: 50%;
-  font-size: 22px;
+  font-size: 14px;
   color: white !important;
-  transform: translate(-50%, -20%);
+  transform: translate(-50%, -50%);
   /* background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent); */
   /* background-color: aqua !important; */
-  z-index: 999999999999;
+  z-index: 9;
+}
+
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
+}
+
+.MuiInputBase-input {
+  
+  color: white !important;
+}
+
+.MuiFormLabel-root {
+  color: whitesmoke !important;
+  /* font-family: ; */
+  
 }
