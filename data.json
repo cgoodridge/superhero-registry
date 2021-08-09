@@ -1,0 +1,47 @@
+[
+    {
+      "id": "0",
+      "name": "Tony Stark",
+      "alias": "Iron Man",
+      "notes": "It's time for this rabbit's post spaying surgery checkup",
+      "birthDate": "1970-05-29",
+      "dateRegistered": "2021-08-07 15:20",
+      "imgURL": "images/iron_man.jpg"
+    },
+    {
+      "id": "1",
+      "name": "Lt. Col. James Rhodes",
+      "alias": "War Machine",
+      "notes": "Rio is up for his next round of vaccinations",
+      "birthDate": "2018-11-28 10:15",
+      "dateRegistered": "2021-08-07 15:20",
+      "imgURL": "images/war_machine.jpg"
+    },
+    {
+      "id": "2",
+      "name": "The Vision",
+      "alias": "N/A",
+      "notes": "Scooter has been pawing at his ear and may have an ear infection",
+      "birthDate": "2018-11-28 14:45",
+      "dateRegistered": "2021-08-07 15:20",
+      "imgURL": "images/vision.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Sam Wilson",
+      "alias": "Captain America",
+      "notes": "This dog is coming in for his monthly nail trim and grooming",
+      "birthDate": "2018-11-28 16:00",
+      "dateRegistered": "2021-08-07 15:20",
+      "imgURL": "images/captain_america.png"
+    },
+    {
+      "id": "4",
+      "name": "James Barnes",
+      "alias": "The Winter Soldier",
+      "notes": "This dog is coming in for his annual checkup and vaccinations",
+      "birthDate": "2018-11-28 9:00",
+      "dateRegistered": "2021-08-07 15:20",
+      "imgURL": "images/winter_soldier.png"
+    }
+  ]
