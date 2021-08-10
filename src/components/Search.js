@@ -27,7 +27,7 @@ const Search = ({ query, onQueryChange, sortBy, onSortByChange, orderBy, onOrder
     return (
       <>
         <Grid container>
-          <Grid item>
+          <Grid style={{width:"100%"}} item xs={9} sm={9} >
             <FormControl>
                 
                 <InputLabel htmlFor="query" className="sr-only">Search</InputLabel>
@@ -47,7 +47,7 @@ const Search = ({ query, onQueryChange, sortBy, onSortByChange, orderBy, onOrder
           </Grid>
 
           <Grid item>
-            <div className="absolute inset-y-0 right-0 flex items-center">
+            <div>
               <div>
                 <IconButton onClick={handleClick}>
                   <SortIcon color="secondary"/>

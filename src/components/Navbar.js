@@ -26,7 +26,7 @@ const Navbar = (props) => {
     return (
 
         <>
-            <CssBaseline />
+            {/* <CssBaseline /> */}
             <HideOnScroll {...props}>
             <AppBar>
                 <Toolbar>
@@ -36,7 +36,7 @@ const Navbar = (props) => {
                 <pre>  </pre>
                 <nav className="nav-col">
                     <div className="nav-wrapper">
-                        <Link href="#!" style={{color: 'white'}}>Threat Database</Link>
+                        <Link href="#!" style={{color: 'white', fontFamily: 'Chakra Petch', fontSize: '22px'}}>S.W.O.R.D. Watchlist</Link>
                         {/* <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a> */}
                     </div>
                 </nav>

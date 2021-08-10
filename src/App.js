@@ -59,7 +59,7 @@ const App = () => {
   }, [fetchData]);
 
   return (
-    <div className="App container mx-auto mt-3 font-thin">
+    <div className="App">
        <ThemeProvider theme={theme} >
           <Container>
 
@@ -67,7 +67,7 @@ const App = () => {
               <Navbar />
             </header>
           
-            <Grid container spacing={10} justifyContent="space-between" alignItems="center" style={{marginTop:"16px"}}>
+            <Grid container spacing={8} justifyContent="space-between" alignItems="center" style={{marginTop:"16px"}}>
                 <Grid item>
                   <div>
 
